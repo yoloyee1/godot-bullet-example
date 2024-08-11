@@ -14,7 +14,7 @@ var distance := 0.0:
 			
 
 func _init() -> void:
-	body_entered.connect(hit_player)
+	body_entered.connect(hit)
 
 func _ready() -> void:
 	set_as_top_level(true)
@@ -30,6 +30,6 @@ func move_forward(delta : float):
 func aim_toward_a_point(point : Vector2):
 	look_at(point)
 
-func hit_player(body: Node2D) -> void:
-	global.player_get_hit.emit()
+func hit(body: Node2D) -> void:
+	#you need write the damage code yourself since I don't know what exactly your health system work
 	queue_free()
