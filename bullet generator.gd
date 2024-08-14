@@ -28,7 +28,7 @@ func wait(time : float):
 func generate(radian : float, pos : Vector2 = global_position):
 	#since rotation is using radian, you need use PI and some math to get the angle you want.
 	var b = bullet.instantiate()
-	b.rotation = radian
+	b.rotation = radian #If you want use degrees directly, change this line from "b.rotation = radian" to "b.rotation_degrees = radian"
 	b.global_position = pos
 	add_child(b)
 	
